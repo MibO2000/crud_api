@@ -6,26 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class ProductServiceImp implements ProductService{
+public class ProductServiceImp implements ProductService {
     @Autowired
     ProductRepository productRepository;
+
     @Override
-    public Optional<Product> findById(Long id){
-        return productRepository.findById(id);
-    }
-    @Override
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         return productRepository.findAll();
     }
+
     @Override
-    public Product save(Product product){
+    public Product save(Product product) {
         return productRepository.save(product);
     }
+
     @Override
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
 }
